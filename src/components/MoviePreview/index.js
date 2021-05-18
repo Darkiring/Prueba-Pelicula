@@ -7,7 +7,7 @@ import {styles} from './styles';
 const MoviePreview = ({title, voteAVR}) => {
   const titleAbbreviated = titleAb => {
     let matches = titleAb.match(/\b(\w)/g);
-    return matches;
+    return matches.join('').toUpperCase();
   };
   return (
     <View style={styles.container}>
