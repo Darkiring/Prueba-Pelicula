@@ -5,7 +5,23 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   posterImage: {
-    height: '20%',
-    width: '20%',
+    height: '50%',
+    width: '65%',
+    alignSelf: 'center',
+  },
+  title: {
+    alignSelf: 'center',
+    marginVertical: 10,
+    fontSize: 18,
+  },
+  voteAvrg: {
+    alignSelf: 'flex-end',
+    fontSize: 15,
+    marginVertical: 5,
+    marginRight: 15,
+  },
+  overview: {
+    alignSelf: 'center',
+    margin: 15,
   },
 });

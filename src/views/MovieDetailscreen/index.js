@@ -1,21 +1,28 @@
-import React from 'react';
-import {View, Image} from 'react-native';
+import React, {useState} from 'react';
+import {View, Image, Text} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 // Contants
-import {URL} from '../../utils/contants';
+import {URLIMAGE} from '../../utils/contants';
 
 // Styles
 import {styles} from './styles';
 
-const MovieDetailscreen = ({item}) => {
+const MovieDetailscreen = props => {
+  const [movieData] = useState(props.route.params.item);
   return (
-    <View styles={styles.container}>
+    <View style={styles.container}>
       <Image
         style={styles.posterImage}
         source={{
-          uri: URL + item.poster_path,
+          uri: URLIMAGE + movieData.poster_path,
         }}
       />
+      <Text style={styles.title}>{movieData.title}</Text>
+      <Text style={styles.voteAvrg}>{movieData.vote_average}/10</Text>
+      <ScrollView>
+        <Text style={styles.overview}>{movieData.overview}</Text>
+      </ScrollView>
     </View>
   );
 };
